@@ -1,2 +1,2 @@
 # automated-code-reviews
-Test automated code reviews using LLM
+Test automated code reviews using LLM.
