@@ -24,6 +24,7 @@ jobs:
       run: |
         if [ ${{ github.event_name }} == 'pull_request' ]; then
           if [ ${{ github.event.pull_request.head.repo.owner.login }} == ${{ github.repository_owner }} ]; then
+             echo "hello"
             echo CONTINUE=true >> $GITHUB_ENV
           fi
         elif [ ${{ github.event_name }} == 'pull_request_target' ]; then
@@ -33,6 +34,7 @@ jobs:
         elif [ ${{ github.event_name }} == 'workflow_dispatch' ]; then
           echo CONTINUE=true >> $GITHUB_ENV
         fi
+        
 
     - name: "Code review"
       uses: NOAA-EMC/ci-llm-code-review@develop
